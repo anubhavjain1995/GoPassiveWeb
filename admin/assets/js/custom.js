@@ -6,11 +6,10 @@ function GetprofileData() {
     }
 
     $.ajax({
-        url: 'http://127.0.0.1:8000/admin_profile',
-        type: 'POST',
+        url: 'http://127.0.0.1:8000/admin_profile/79d354eb-b8ab-4c49-b745-d80c1dd07bc4/',
+        type: 'GET',
         contentType: "application/json;charset=utf-8",
         crossDomain: true,
-        data: JSON.stringify(user),
         success: function (data) {
             console.log(data);
             $('#profile_image').attr('src', "http://127.0.0.1:8000" + data.data.profile_image);

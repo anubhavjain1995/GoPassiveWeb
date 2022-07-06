@@ -604,47 +604,8 @@
     $(document).ready(function () {
       HomePageData();
     });
-
-    function GetprofileData() {
-      // Call Web API to get a list of Product
-      console.log(localStorage.getItem("admin_uuid"), 'hfbg');
-      let user = {
-        "uuid": "79d354eb-b8ab-4c49-b745-d80c1dd07bc4"
-      }
-
-      $.ajax({
-        url: 'http://127.0.0.1:8000/admin_profile',
-        type: 'POST',
-        contentType: "application/json;charset=utf-8",
-        crossDomain: true,
-        data: JSON.stringify(user),
-        success: function (data) {
-          console.log(data);
-
-          $('.headerImage').attr('src', "http://127.0.0.1:8000" + data.data.profile_image)
-          $('#HeaderuserName').html(data.data.username);
-        },
-        error: function (request, message, error) {
-          handleException(request, message, error);
-        }
-      });
-    }
-
-
-    $(document).ready(function () {
-      GetprofileData();
-    });
-
-    function handleException(request, message, error) {
-      var msg = "";
-      msg += "Code: " + request.status + "\n";
-      msg += "Text: " + request.statusText + "\n";
-      if (request.responseJSON != null) {
-        msg += "Message" + request.responseJSON.Message + "\n";
-      }
-      alert(msg);
-    }  
   </script>
+   <script src="../assets/js/custom.js"></script>
 </body>
 
 </html>

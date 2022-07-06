@@ -213,7 +213,8 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label>Name</label>
-                                        <input type="text" name="username" id="username" required class="form-control" />
+                                        <input type="text" name="username" id="username" required
+                                            class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <label>Description</label>
@@ -225,7 +226,8 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default" onclick="return addTestimonial();">Save</button>
+                                    <button type="submit" class="btn btn-default"
+                                        onclick="return addTestimonial();">Save</button>
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </form>
@@ -295,8 +297,8 @@
                     '<td>' + data.username + '</td>' +
                     '<td>' + data.text + '</td>' +
                     '<td><img src="http://127.0.0.1:8000' + data.profile_image + '" height="100px" width="100px"/>' +
-                    '</td><td><a href="edit-testimonial.html?uuid='+data.uuid+'" class="btn btn-info">Edit</a>' +
-                    '<a class="btn btn-danger" onclick="return deleteTestimonial("'+data.uuid+'")" >Delete</a></td>' +
+                    '</td><td><a href="edit-testimonial.html?uuid=' + data.uuid + '" class="btn btn-info">Edit</a>' +
+                    '<a class="btn btn-danger trstimonial" id="'+data.uuid+'" data-id="'+data.uuid+'"  onclick="return deleteTestimonial();" >Delete</a></td>' +
                     ' </tr>';
                 $('#example').append(table);
 
@@ -308,9 +310,9 @@
         });
 
         function addTestimonial() {
-          let  testimonial = new Object();
-          testimonial.username = $('#username').val();
-          testimonial.description = $("#description").val();
+            let testimonial = new Object();
+            testimonial.username = $('#username').val();
+            testimonial.description = $("#description").val();
             var profile_image = $('input[name="profile_image"]').get(0).files[0];
 
             var formData = new FormData();
@@ -330,14 +332,38 @@
                 processData: false,
                 cache: false,
                 success: function (data) {
-                    alert('Data Insert successfully',data);
-                    //window.location.reload();
+                    alert('Data Insert successfully', data);
+                    window.location.reload();
                 },
                 error: function (request, message, error) {
                     handleException(request, message, error);
                 }
             });
             return false;
+        }
+
+        // delete Testimonial
+        function deleteTestimonial() {
+            const uuid = $('.trstimonial').attr("data-id");
+            let testimonialUuid = { "uuid": uuid }
+            if (confirm('Are you sure want to delete this testimonial')) {
+                $.ajax({
+                    url: "http://127.0.0.1:8000/testimonial/delete_testimonial/",
+                    type: 'POST',
+                    contentType: "application/json;charset=utf-8",
+                    crossDomain: true,
+                    data:JSON.stringify(testimonialUuid),
+                    success: function (data) {
+                        alert('Data delete successfully', data);
+                        window.location.reload();
+                    },
+                    error: function (request, message, error) {
+                        handleException(request, message, error);
+                    }
+                });
+            } else {
+                return false;
+            }
         }
     </script>
     <script src="../assets/js/custom.js"></script>
