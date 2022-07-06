@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Go Passive</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+  <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../assets/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="../index.html"><img src="../assets/images/logo.jpeg"
+            style="width: 168px;height: 67px;" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="../index.html"><img src="../assets/images/logo-mini.jpeg"
+            alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-stretch">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="mdi mdi-menu"></span>
+        </button>
+
+        <ul class="navbar-nav navbar-nav-right">
+
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown"
+              aria-expanded="false">
+              <div class="nav-profile-img">
+                <img src="assets/images/faces/face28.png" alt="image" class="headerImage">
+              </div>
+              <div class="nav-profile-text">
+                <p class="mb-1 text-black" id="HeaderuserName">Henry Klein</p>
+              </div>
+            </a>
+            <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm"
+              aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+              <div class="p-3 text-center bg-primary">
+                <img class="img-avatar img-avatar48 img-avatar-thumb headerImage" src="assets/images/faces/face28.png" alt="">
+              </div>
+              <div class="p-2">
+                <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+
+                <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="profile.html">
+                  <span>Profile</span>
+                  <span class="p-0">
+                    <span class="badge badge-success">1</span>
+                    <i class="mdi mdi-account-outline ml-1"></i>
+                  </span>
+                </a>
+                <a class="dropdown-item py-1 d-flex align-items-center justify-content-between"
+                  onclick="return logout();">
+                  <span>Log Out</span>
+                  <i class="mdi mdi-logout ml-1"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-category">Main</li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">
+              <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <!-- <li class="nav-item">
+      <a class="nav-link" href="basic_elements">
+        <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+        <span class="menu-title">Forms</span>
+      </a>
+    </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="leads.html">
+              <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+              <span class="menu-title">Leads</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="client-list.html">
+              <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+              <span class="menu-title">Client List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="agent-list.html">
+              <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+              <span class="menu-title">Agent List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+              <span class="menu-title">Content Managment</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="home.html">Home Page</a></li>
+                <li class="nav-item"> <a class="nav-link" href="about.html">About us</a></li>
+                <li class="nav-item"> <a class="nav-link" href="terms.html">Terms & Condition</a></li>
+                <li class="nav-item"> <a class="nav-link" href="privacy.html">Privacy Policy</a></li>
+                <li class="nav-item"> <a class="nav-link" href="faq.html">Faq</a></li>
+                <li class="nav-item"> <a class="nav-link" href="vision.html">Vision</a></li>
+                <li class="nav-item"> <a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"> <a class="nav-link" href="blogs.html">Blogs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="testimonial.html">Testimonial</a></li>
+
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">
+              <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+              <span class="menu-title">Contact Us List</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="request-recived.html">
+              <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+              <span class="menu-title">Requests Received</span>
+            </a>
+          </li>
+          <li class="nav-item sidebar-user-actions">
+            <div class="sidebar-user-menu">
+              <a class="nav-link"><i class="mdi mdi-logout menu-icon" onclick="return logout();"></i>
+                <span class="menu-title">Log Out</span></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="page-header">
+            <h3 class="page-title"> Home Page </h3>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Home Page Content</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <form class="forms-sample" id="homeData" method="PATCH">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Video Top</label>
+                          <input type="file" name="video_top">
+                        </div>
+                        <video width="100" id="video_top" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Slide first video</label>
+                          <input type="file" name="slide_first_video">
+                        </div>
+                        <video width="100" id="slide_first_video" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Slide Second video</label>
+                          <input type="file" name="slide_second_video">
+                        </div>
+                        <video width="100" id="slide_second_video" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                     
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Slide third video</label>
+                          <input type="file" name="slide_third_video">
+                        </div>
+                        <video width="100" id="slide_third_video" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                      
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Middle video first</label>
+                          <input type="file" name="middle_video_first">
+                        </div>
+                        <video width="100" id="middle_video_first" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Middle video second</label>
+                          <input type="file" name="middle_video_second">
+                        </div>
+                        <video width="100" id="middle_video_second" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Middle video Third</label>
+                          <input type="file" name="middle_video_third">
+                        </div>
+                        <video width="100" id="middle_video_third" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Middle video Fourth</label>
+                          <input type="file" name="middle_video_fourth">
+                        </div>
+                        <video width="100" id="middle_video_fourth" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="exampleInputUsername1">Middle video Fifth</label>
+                          <input type="file" name="middle_video_fifth">
+                        </div>
+                        <video width="100" id="middle_video_fifth" height="100" controls>
+                          <source src="" type="video/mp4">
+                        </video>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Text Top</label>
+                      <textarea name="text_top" id="text_top" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide first header</label>
+                      <textarea name="slide_first_header" id="slide_first_header" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide first Text</label>
+                      <textarea name="slide_first_text" id="slide_first_text" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide second header</label>
+                      <textarea name="slide_second_header" id="slide_second_header" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide second text</label>
+                      <textarea name="slide_second_text" id="slide_second_text" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide Third header</label>
+                      <textarea name="slide_third_header" id="slide_third_header" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Slide Third Text</label>
+                      <textarea name="slide_third_text" id="slide_third_text" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle first header </label>
+                      <textarea name="middle_header_first" id="middle_header_first" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle first Text </label>
+                      <textarea name="middle_text_first" id="middle_text_first" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle second header </label>
+                      <textarea name="middle_header_second" id="middle_header_second" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle second text </label>
+                      <textarea name="middle_text_second" id="middle_text_second" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle third header</label>
+                      <textarea name="middle_header_third" id="middle_header_third" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle third text </label>
+                      <textarea name="middle_text_third" id="middle_text_third" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle fourth header</label>
+                      <textarea name="middle_header_fourth" id="middle_header_fourth" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle fourth text</label>
+                      <textarea name="middle_text_fourth" id="middle_text_fourth" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle fifth header</label>
+                      <textarea name="middle_header_fifth" id="middle_header_fifth" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Middle fifth text</label>
+                      <textarea name="middle_text_fifth" id="middle_text_fifth" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Bootom header</label>
+                      <textarea name="bottom_header" id="bottom_header" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputUsername1">Bootom text</label>
+                      <textarea name="bottom_text" id="bottom_text" class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit" onclick="return updateClick()" class="btn btn-primary mr-2">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="footer-inner-wraper">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © gopassive</span>
+
+            </div>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="../assets/vendors/select2/select2.min.js"></script>
+  <script src="../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../assets/js/off-canvas.js"></script>
+  <script src="../assets/js/hoverable-collapse.js"></script>
+  <script src="../assets/js/misc.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <script src="../assets/js/file-upload.js"></script>
+  <script src="../assets/js/typeahead.js"></script>
+  <script src="../assets/js/select2.js"></script>
+  <!-- <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script>
+                       CKEDITOR.replace( 'text_top' );
+                </script> -->
+  <!-- End custom js for this page -->
+  <script type="text/javascript">
+    let Product = {
+      id: 0,
+      text_top: "",
+      slide_first_header: "",
+      slide_first_text: "",
+      slide_second_header: "",
+      slide_second_text: "",
+      slide_third_header: "",
+      slide_third_text: "",
+      middle_header_first: "",
+      middle_text_first: "",
+      middle_header_second: "",
+      middle_text_second: "",
+      middle_header_third: "",
+      middle_text_third: "",
+      middle_header_fourth: "",
+      middle_text_fourth: "",
+      middle_header_fifth: "",
+      middle_text_fifth: "",
+      bottom_header: "",
+      bottom_text: ""
+    }
+
+    function updateClick() {
+      Product = new Object();
+      // Product.text_top = CKEDITOR.instances['text_top'].getData();
+      Product.text_top = $('#text_top').val();
+      Product.slide_first_header = $("#slide_first_header").val();
+      Product.slide_first_text = $("#slide_first_text").val();
+      Product.slide_second_header = $("#slide_second_header").val();
+      Product.slide_second_text = $("#slide_second_text").val();
+      Product.slide_third_header = $("#slide_third_header").val();
+      Product.slide_third_text = $("#slide_third_text").val();
+      Product.middle_header_first = $("#middle_header_first").val();
+      Product.middle_text_first = $("#middle_text_first").val();
+      Product.middle_header_second = $("#middle_header_second").val();
+      Product.middle_text_second = $("#middle_text_second").val();
+      Product.middle_header_third = $("#middle_header_third").val();
+      Product.middle_text_third = $("#middle_text_third").val();
+      Product.middle_header_fourth = $("#middle_header_fourth").val();
+      Product.middle_text_fourth = $("#middle_text_fourth").val();
+      Product.middle_header_fifth = $("#middle_header_fifth").val();
+      Product.middle_text_fifth = $("#middle_text_fifth").val();
+      Product.bottom_header = $("#bottom_header").val();
+      Product.bottom_text = $("#bottom_text").val();
+      Product.id = 1
+      console.log(Product);
+      var video_top = $('input[name="video_top"]').get(0).files[0];
+      var slide_first_video = $('input[name="slide_first_video"]').get(0).files[0];
+      var slide_second_video = $('input[name="slide_second_video"]').get(0).files[0];
+      var slide_third_video = $('input[name="slide_third_video"]').get(0).files[0];
+      var middle_video_first = $('input[name="middle_video_first"]').get(0).files[0];
+      var middle_video_second = $('input[name="middle_video_second"]').get(0).files[0];
+      var middle_video_third = $('input[name="middle_video_third"]').get(0).files[0];
+      var middle_video_fourth = $('input[name="middle_video_fourth"]').get(0).files[0];
+      var middle_video_fifth = $('input[name="middle_video_fifth"]').get(0).files[0];
+      
+      var formData = new FormData();
+      if (video_top) {
+        formData.append('video_top', video_top);
+      }
+      if (slide_first_video) {
+        formData.append('slide_first_video', slide_first_video);
+      }
+      if (slide_second_video) {
+        formData.append('slide_second_video', slide_second_video);
+      }
+      if (slide_third_video) {
+        formData.append('slide_third_video', slide_third_video);
+      }
+      if (middle_video_first) {
+        formData.append('middle_video_first', middle_video_first);
+      }
+      if (middle_video_second) {
+        formData.append('middle_video_second', middle_video_second);
+      }
+      if (middle_video_third) {
+        formData.append('middle_video_third', middle_video_third);
+      }
+      if (middle_video_fourth) {
+        formData.append('middle_video_fourth', middle_video_fourth);
+      }
+      if (middle_video_fifth) {
+        formData.append('middle_video_fifth', middle_video_fifth);
+      }
+      formData.append('id', 1);
+      formData.append('text_top', Product.text_top);
+      formData.append('slide_first_header', Product.slide_first_header);
+      formData.append('slide_first_text', Product.slide_first_text);
+      formData.append('slide_second_header', Product.slide_second_header);
+      formData.append('slide_second_text', Product.slide_second_text);
+      formData.append('slide_third_header', Product.slide_third_header);
+      formData.append('slide_third_text', Product.slide_third_text);
+      formData.append('middle_header_first', Product.middle_header_first);
+      formData.append('middle_text_first', Product.middle_text_first);
+      formData.append('middle_header_second', Product.middle_header_second);
+      formData.append('middle_text_second', Product.middle_text_second);
+      formData.append('middle_header_third', Product.middle_header_third);
+      formData.append('middle_text_third', Product.middle_text_third);
+      formData.append('middle_header_fourth', Product.middle_header_fourth);
+      formData.append('middle_text_fourth', Product.middle_text_fourth);
+      formData.append('middle_header_fifth', Product.middle_header_fifth);
+      formData.append('middle_text_fifth', Product.middle_text_fifth);
+      formData.append('bottom_header', Product.bottom_header);
+      formData.append('bottom_text', Product.bottom_text);
+
+      $.ajax({
+        url: "http://127.0.0.1:8000/home-cms/",
+        type: 'PATCH',
+        contentType: "application/json;charset=utf-8",
+        crossDomain: true,
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: function (Product) {
+          alert('Data updated successfully');
+          window.location.reload();
+        },
+        error: function (request, message, error) {
+          handleException(request, message, error);
+        }
+      });
+      return false;
+    }
+
+
+    function HomePageData() {
+      // Call Web API to get a list of Product
+      $.ajax({
+        url: 'http://127.0.0.1:8000/home-cms/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          // console.log(data.data);
+          productListSuccess(data.data);
+        },
+        error: function (request, message, error) {
+          handleException(request, message, error);
+        }
+      });
+    }
+
+    function productListSuccess(data) {
+      // Iterate over the collection of data
+      $.each(data, function (index, data) {
+        // Add a row to the Product table
+        console.log(data);
+        var video = document.getElementById('video_top');
+        video.src = "http://127.0.0.1:8000" + data.video_top;
+        $("#text_top").val(data.text_top);
+        var video1 = document.getElementById('slide_first_video');
+        video1.src = "http://127.0.0.1:8000" + data.slide_first_video;
+
+        var video2 = document.getElementById('slide_second_video');
+        video2.src = "http://127.0.0.1:8000" + data.slide_second_video;
+
+        var video3 = document.getElementById('slide_third_video');
+        video3.src = "http://127.0.0.1:8000" + data.slide_third_video;
+
+        var video4 = document.getElementById('middle_video_first');
+        video4.src = "http://127.0.0.1:8000" + data.middle_video_first;
+
+        var video5 = document.getElementById('middle_video_second');
+        video5.src = "http://127.0.0.1:8000" + data.middle_video_second;
+
+        var video6 = document.getElementById('middle_video_third');
+        video6.src = "http://127.0.0.1:8000" + data.middle_video_third;
+
+        var video7 = document.getElementById('middle_video_fourth');
+        video7.src = "http://127.0.0.1:8000" + data.middle_video_fourth;
+
+        var video8 = document.getElementById('middle_video_fifth');
+        video8.src = "http://127.0.0.1:8000" + data.middle_video_fifth;
+
+        $("#slide_first_header").val(data.slide_first_header);
+        $("#slide_first_text").val(data.slide_first_text);
+        $("#slide_second_header").val(data.slide_second_header);
+        $("#slide_second_text").val(data.slide_second_text);
+        $("#slide_third_header").val(data.slide_third_header);
+        $("#slide_third_text").val(data.slide_third_text);
+        $("#middle_header_first").val(data.middle_header_first);
+        $("#middle_text_first").val(data.middle_text_first);
+        $("#middle_header_second").val(data.middle_header_second);
+        $("#middle_text_second").val(data.middle_text_second);
+        $("#middle_header_third").val(data.middle_header_third);
+        $("#middle_text_third").val(data.middle_text_third);
+        $("#middle_header_fourth").val(data.middle_header_fourth);
+        $("#middle_text_fourth").val(data.middle_text_fourth);
+        $("#middle_header_fifth").val(data.middle_header_fifth);
+        $("#middle_text_fifth").val(data.middle_text_fifth);
+        $("#bottom_header").val(data.bottom_header);
+        $("#bottom_text").val(data.bottom_text);
+      });
+    }
+
+    $(document).ready(function () {
+      HomePageData();
+    });
+
+    function GetprofileData() {
+      // Call Web API to get a list of Product
+      console.log(localStorage.getItem("admin_uuid"), 'hfbg');
+      let user = {
+        "uuid": "79d354eb-b8ab-4c49-b745-d80c1dd07bc4"
+      }
+
+      $.ajax({
+        url: 'http://127.0.0.1:8000/admin_profile',
+        type: 'POST',
+        contentType: "application/json;charset=utf-8",
+        crossDomain: true,
+        data: JSON.stringify(user),
+        success: function (data) {
+          console.log(data);
+
+          $('.headerImage').attr('src', "http://127.0.0.1:8000" + data.data.profile_image)
+          $('#HeaderuserName').html(data.data.username);
+        },
+        error: function (request, message, error) {
+          handleException(request, message, error);
+        }
+      });
+    }
+
+
+    $(document).ready(function () {
+      GetprofileData();
+    });
+
+    function handleException(request, message, error) {
+      var msg = "";
+      msg += "Code: " + request.status + "\n";
+      msg += "Text: " + request.statusText + "\n";
+      if (request.responseJSON != null) {
+        msg += "Message" + request.responseJSON.Message + "\n";
+      }
+      alert(msg);
+    }  
+  </script>
+</body>
+
+</html>

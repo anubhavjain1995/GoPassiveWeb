@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Go Passive</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="../index.html"><img src="../assets/images/logo.jpeg"
+                        style="width: 168px;height: 67px;" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../index.html"><img src="../assets/images/logo-mini.jpeg"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+
+                <ul class="navbar-nav navbar-nav-right">
+
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown"
+                            aria-expanded="false">
+                            <div class="nav-profile-img">
+                                <img src="assets/images/faces/face28.png" alt="image" class="headerImage">
+                            </div>
+                            <div class="nav-profile-text">
+                                <p class="mb-1 text-black" id="HeaderuserName">Henry Klein</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm"
+                            aria-labelledby="profileDropdown" data-x-placement="bottom-end">
+                            <div class="p-3 text-center bg-primary">
+                                <img class="img-avatar img-avatar48 img-avatar-thumb headerImage"
+                                    src="assets/images/faces/face28.png" alt="">
+                            </div>
+                            <div class="p-2">
+                                <h5 class="dropdown-header text-uppercase pl-2 text-dark">User Options</h5>
+
+                                <a class="dropdown-item py-1 d-flex align-items-center justify-content-between"
+                                    href="profile.html">
+                                    <span>Profile</span>
+                                    <span class="p-0">
+                                        <span class="badge badge-success">1</span>
+                                        <i class="mdi mdi-account-outline ml-1"></i>
+                                    </span>
+                                </a>
+                                <a class="dropdown-item py-1 d-flex align-items-center justify-content-between"
+                                    onclick="return logout();">
+                                    <span>Log Out</span>
+                                    <i class="mdi mdi-logout ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-category">Main</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <span class="icon-bg"><i class="mdi mdi-cube menu-icon"></i></span>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+      <a class="nav-link" href="basic_elements">
+        <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
+        <span class="menu-title">Forms</span>
+      </a>
+    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="leads.html">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Leads</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client-list.html">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Client List</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="agent-list.html">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Agent List</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+                            <span class="menu-title">Content Managment</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="home.html">Home Page</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="about.html">About us</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="terms.html">Terms & Condition</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="privacy.html">Privacy Policy</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="faq.html">Faq</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="vision.html">Vision</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="services.html">Services</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="blogs.html">Blogs</a></li>
+                                <li class="nav-item"> <a class="nav-link" href="testimonial.html">Testimonial</a></li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Contact Us List</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="request-recived.html">
+                            <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
+                            <span class="menu-title">Requests Received</span>
+                        </a>
+                    </li>
+                    <li class="nav-item sidebar-user-actions">
+                        <div class="sidebar-user-menu">
+                            <a class="nav-link"><i class="mdi mdi-logout menu-icon" onclick="return logout();"></i>
+                                <span class="menu-title">Log Out</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h3 class="page-title"> Home Page </h3>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Home Page Content</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form class="forms-sample" id="updateTestimonial" method="POST">
+                                        <div class="row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">UserName</label>
+                                                    <input type="text" name="username" id="username"
+                                                        class="form-control" required />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label for="exampleInputUsername1">Description</label>
+                                                    <textarea name="text" id="description" class="form-control"
+                                                        required></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label>Image</label>
+                                                    <input type="file" name="profile_image" id="profile_image" />
+                                                    <img src="" id="image" height="100px" width="100px" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" onclick="return updateTestimonial()"
+                                            class="btn btn-primary mr-2">Submit</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="footer-inner-wraper">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright ©
+                                gopassive</span>
+
+                        </div>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../assets/vendors/select2/select2.min.js"></script>
+    <script src="../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/js/off-canvas.js"></script>
+    <script src="../assets/js/hoverable-collapse.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="../assets/js/file-upload.js"></script>
+    <script src="../assets/js/typeahead.js"></script>
+    <script src="../assets/js/select2.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script>
+                       CKEDITOR.replace( 'text_top' );
+                </script> -->
+    <!-- End custom js for this page -->
+    <script type="text/javascript">
+        let Product = {
+        }
+
+        let queryString = window.location.search;
+        let urlParams = new URLSearchParams(queryString);
+
+        let uuid = urlParams.get('uuid')
+
+        function updateTestimonial() {
+            Product = new Object();
+            Product.username = $('#username').val();
+            Product.description = $("#description").val();
+            var profile_image = $('input[name="profile_image"]').get(0).files[0];
+
+            var formData = new FormData();
+            if (profile_image) {
+                formData.append('profile_image', profile_image);
+            }
+
+            formData.append('uuid', uuid);
+            formData.append('username', Product.username);
+            formData.append('text', Product.description);
+
+
+            $.ajax({
+                url: "http://127.0.0.1:8000/testimonial/update_testimonial/",
+                type: 'POST',
+                contentType: "application/json;charset=utf-8",
+                crossDomain: true,
+                data: formData,
+                contentType: false,
+                processData: false,
+                cache: false,
+                success: function (Product) {
+                    alert('Data updated successfully');
+                    window.location.reload();
+                },
+                error: function (request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+            return false;
+        }
+
+        let testimonialId = {
+            uuid: 0
+        }
+        function TestimonialData() {
+            // Call Web API to get a list of Product
+            testimonialId = new Object();
+
+            testimonialId.uuid = uuid;
+            console.log(JSON.stringify(testimonialId));
+            $.ajax({
+                url: 'http://127.0.0.1:8000/testimonial/get_user_testimonial/',
+                type: 'POST',
+                contentType: "application/json;charset=utf-8",
+                crossDomain: true,
+                data: JSON.stringify(testimonialId),
+                success: function (data) {
+                    console.log(data.data.username);
+                    var image = document.getElementById('image');
+                    image.src = "http://127.0.0.1:8000" + data.data.profile_image;
+                    $("#username").val(data.data.username);
+                    $("#description").val(data.data.text);
+                },
+                error: function (request, message, error) {
+                    handleException(request, message, error);
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            TestimonialData();
+        });
+
+    </script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+
+</html>
